@@ -16,6 +16,7 @@ class Zomato {
     const categoryURL = 'https://developers.zomato.com/api/v2.1/categories';
     //CITY URL
     const cityURL = 'https://developers.zomato.com/api/v2.1/cities?q= £(city)';
+    
 
     //category data
     const categoryInfo = await fetch(categoryURL, this.header);
@@ -71,6 +72,7 @@ class UI {
   }
 
   getRestaurants(restaurants) {
+   console.log(restaurants[0]);
 
     if (restaurants.length === 0) {
       this.showFeedback('no catagories in this city')
@@ -91,7 +93,7 @@ class UI {
           menu_url,
           url
         } = restaurant.restaurant;
-   if (img !== '') {
+   if (true) {
       this.showRestaurant(img, name, address, aggregate_rating, cuisines, cost, menu_url, url);
      
     }
@@ -100,6 +102,7 @@ class UI {
     }
   }
   showRestaurant(img, name, address, aggregate_rating, cuisines, cost, menu_url, url) {
+    
     const div = document.createElement('div');
     div.classList.add('col-11', 'mx-auto', 'my-3', 'col-md-4');
 
@@ -141,6 +144,7 @@ class UI {
        </div>
       </div>`;
     this.resterauntList.appendChild(div);
+    console.log(div);
  
   }
 
